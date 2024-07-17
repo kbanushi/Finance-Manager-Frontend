@@ -1,24 +1,24 @@
 import logo from './logo.svg';
+import FileUpload from './components/FileUpload';
+import Register from './components/Register';
+import Login from './components/Login';
+import Welcome from './components/Welcome';
+import Home from './components/Home';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 
 function App() {
+    console.log("APP RUNNING");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+          <Routes>
+              <Route path="/" element={<Welcome />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/upload" element={<FileUpload />} />
+              <Route path="/home" element={<Home />} />
+          </Routes>
+      </Router>
   );
 }
 
